@@ -7,7 +7,7 @@ import { GithubService } from '../services/github.service';
     templateUrl: 'profile.component.html'
 })
 export class ProfileComponent { 
-  constructor(private _githubService: GithubService){
+constructor(private _githubService: GithubService){
     
   }
 }
