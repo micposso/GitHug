@@ -11,11 +11,19 @@
         </div>
         <div class="col-md-6">
           <div class="stats">
-            <span class="label label-default">{{user.public_repos}} Public Repors</span>
+            <span class="label label-default">{{user.public_repos}} Public Repos</span>
             <span class="label label-primary">{{user.public_gists}} Public Gists</span>
             <span class="label label-success">{{user.followers}} Followers</span>
             <span class="label label-info">{{user.following}} Following</span>
           </div>
+          <br>
+          <ul class="list-group">
+            <li class="list-group-item"><b>UserName: </b>{{user.login}}</li>
+            <li class="list-group-item"><b>Location: </b>{{user.location}}</li>
+            <li class="list-group-item"><b>Email: </b>{{user.email}}</li>
+            <li class="list-group-item"><b>Blog: </b>{{user.blog}}</li>
+            <li class="list-group-item"><b>Member Since: </b>{{user.created_at}}</li>
+          </ul>
         </div>
       </div>
     </div>
