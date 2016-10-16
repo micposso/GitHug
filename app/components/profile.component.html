@@ -1,21 +1,13 @@
 <div *ngIf="user">
+  <!-- user info panel -->
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{ user.name }}</h3>
-    </div>
+      <h3 class="panel-title">{{ user.name }}</h3> </div>
     <div class="panel-body">
       <div class="row">
-        <div class="col-md-4">
-          <img class="img-thumbnail" src="{{ user.avatar_url }}">
-          <a class="btn btn-default btn-block" href="{{user.html_url}}" target="_blank">View Profile</a>
-        </div>
+        <div class="col-md-4"> <img class="img-thumbnail" src="{{ user.avatar_url }}"> <a class="btn btn-default btn-block" href="{{user.html_url}}" target="_blank">View Profile</a> </div>
         <div class="col-md-6">
-          <div class="stats">
-            <span class="label label-default">{{user.public_repos}} Public Repos</span>
-            <span class="label label-primary">{{user.public_gists}} Public Gists</span>
-            <span class="label label-success">{{user.followers}} Followers</span>
-            <span class="label label-info">{{user.following}} Following</span>
-          </div>
+          <div class="stats"> <span class="label label-default">{{user.public_repos}} Public Repos</span> <span class="label label-primary">{{user.public_gists}} Public Gists</span> <span class="label label-success">{{user.followers}} Followers</span> <span class="label label-info">{{user.following}} Following</span> </div>
           <br>
           <ul class="list-group">
             <li class="list-group-item"><b>UserName: </b>{{user.login}}</li>
@@ -28,6 +20,21 @@
       </div>
     </div>
   </div>
-
-
+  <!-- repor panel -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Public Repos</h3>
+    </div>
+    <div class="panel-body">
+      <div *ngFor="let repo of repos">
+        {{repo.name}}
+      </div>
+          
+    
+    
+    
+    
+    
+    </div>
+  </div>
 </div>
