@@ -4,6 +4,11 @@
     <title>GitHug</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 
@@ -13,14 +18,55 @@
   <body>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <form class="well">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter GitHub Username" [(ngModel)]="username" name="username" (keyup)="searchUser()">
+    <div class="col-md-12 well">
+      <form>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Enter GitHub Username" [(ngModel)]="username" name="username" (keyup)="searchUser()">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="checkbox-inline">
+            <input type="checkbox" data-toggle="toggle"> Location
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" data-toggle="toggle"> Stars
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" data-toggle="toggle"> Project Type
+          </label>
+          <button type="submit" class="btn btn-success">Submit</button>
         </div>
       </form>
     </div>
   </div>
+  
+  <div class="row well">
+   
+    <div class="col-md-3">
+      <a href="#" class="thumbnail">
+        <img src="..." alt="...">
+      </a>
+    </div>
+    <div class="col-md-9">
+      <ul class="list-group">
+        <li class="list-group-item"><b>UserName: </b>{{}}</li>
+      </ul>      
+    </div>
+    
+    <div class="col-md-12">
+      <ul class="list-group">
+        <li class="list-group-item"><b>Location: </b>{{}}</li>
+        <li class="list-group-item"><b>Email: </b>{{}}</li>
+        <li class="list-group-item"><b>Blog: </b>{{}}</li>
+        <li class="list-group-item"><b>Member Since: </b>{{}}</li>
+        <li class="list-group-item"><b>Public Repos: </b>{{}}</li>
+      </ul>
+    </div>
+  </div>
+  
+  
+  
 </div>
 
 
