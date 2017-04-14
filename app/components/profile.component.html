@@ -1,12 +1,9 @@
 <div class="row">
   <div class="col-md-12 well">
     <form>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter GitHub Username" [(ngModel)]="username" name="username" (keyup)="searchUser()">
-        </div>
-      </div>
-      <div class="col-md-6">
+         
         <label class="checkbox-inline">
           <input type="checkbox" data-toggle="toggle"> Location
         </label>
@@ -16,7 +13,19 @@
         <label class="checkbox-inline">
           <input type="checkbox" data-toggle="toggle"> Project Type
         </label>
-        <button type="submit" class="btn btn-success" (click)="submitStatus()">Submit</button>
+
+        </div>
+      </div>
+      <div class="col-md-8">
+      
+        <div class="row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Enter GitHub Username" [(ngModel)]="username" name="username" (keyup)="searchUser()">
+          </div>
+          <div class="col-md-6">
+            <button type="submit" class="btn btn-success" (click)="submitStatus()">Submit</button>
+          </div>
+        </div>
       </div>
     </form>
   </div>
