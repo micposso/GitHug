@@ -11,6 +11,7 @@ e2e/**/*.js.map
 _test-output
 _temp
 .DS_Store
+npm-debug.log
 
 !karma*.js
 !protractor*.js
