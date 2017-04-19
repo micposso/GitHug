@@ -46,7 +46,7 @@ export class GithubService{
                 this.getUserByLoginName(tempLocationUsers[index].login)
                   .subscribe(
                     userinfo => {
-                      if( this.locationUsers.length < 5 ){
+                      if( this.locationUsers.length < 10 ){
                         this.locationUsers.push(userinfo);
                         console.log(this.locationUsers);
                         //console.log(this.locationUsers);
