@@ -1,13 +1,32 @@
-import { Component } from '@angular/core';
+import { Component,
+				trigger,
+				state,
+				style,
+				transition,
+				animate,
+				keyframes
+} from '@angular/core';
 import { GithubService } from '../services/github.service';
 import Array = core.Array;
 
 @Component({
   moduleId: module.id,
   selector: 'profile',
-  templateUrl: 'profile.component.html'
+  templateUrl: 'profile.component.html',
+			animations: [
+
+			trigger('movePanel', [
+
+			transition('void => *', [
+			style({backgroundColor: '#000000'}), animate(100)
+				])
+			])
+
+		]
 })
 export class ProfileComponent {
+
+	state: string = 'inactive';
 
   user: any;
   username: string;
