@@ -24,6 +24,7 @@ import Array = core.Array;
 
 		]
 })
+
 export class ProfileComponent {
 
 	state: string = 'inactive';
@@ -32,6 +33,8 @@ export class ProfileComponent {
   username: string;
   location: string;
   locationUsers: Array<any> = [];
+  locationChecked: boolean = false;
+  hireableChecked: boolean = false;
 
   constructor( private _githubService: GithubService ){
     this.user = false;
@@ -39,6 +42,10 @@ export class ProfileComponent {
   }
 
   searchUser() {
+    if((!this.locationChecked || !this.hireableChecked) || !this.username) {
+      alert("Must tick location/hireable and enter username");
+      return;
+    }
     this._githubService.updateUser(this.username);
 
     this._githubService.getUser().subscribe(user => {
@@ -46,7 +53,7 @@ export class ProfileComponent {
       this.user = user;
       this.location = user.location;
 
-      this._githubService.updateLocationUser(this.location);
+      this._githubService.updateLocationUser(this.location, this.hireableChecked);
 
       this._githubService.getViewUsers();
       this._loadLocationUsersData();

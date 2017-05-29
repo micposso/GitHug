@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 export class GithubService{
   private username: string;
   private location: string;
+  private hireable: boolean;
   public  locationUsers: Array<any> = [];
   private getUsersFlag: boolean = false;
   private client_id = 'fed417be4fb9ea0af51d';
@@ -27,7 +28,9 @@ export class GithubService{
   }
 
   getLocationUsers(){
-    return this._http.get('http://api.github.com/search/users?type=Users&q=location:' + this.location + '&client_id='+this.client_id+'&client_secret='+this.client_secret)
+    let url = 'http://api.github.com/search/users?type=Users&q=location:' + this.location + '&hireable='+this.hireable+'&client_id='+this.client_id+'&client_secret='+this.client_secret;
+    console.log(url);
+    return this._http.get(url)
       .map(res => res.json());
   }
 
@@ -67,9 +70,9 @@ export class GithubService{
     this.username = username;
   }
 
-  updateLocationUser(userLocation:string){
+  updateLocationUser(userLocation:string, hireable: boolean){
     this.location = userLocation;
-
+    this.hireable = hireable;
   }
 
   getLocationUsersData(): Promise<any> {
